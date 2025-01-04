@@ -95,11 +95,11 @@
             }
 
             .ml13 {
-                font-size: 1.2em;
+                font-size: 2em;
             }
 
             .content-social {
-                padding: 5px;
+                padding: 1.2px;
             }
         }
     </style>
@@ -158,9 +158,14 @@
     <script>
         var audio = new Audio("https://cdn.discordapp.com/attachments/1287401094364004353/1287407242437726229/Little_Love_SongThe_Angel_Next_Door_Spoils_Me_Rotten_ED_-_Chiisana_Koi_no_Uta_-_Ru_s_Piano_Cover.mp3?ex=6779e22d&is=677890ad&hm=b7627d467b0a2a0a2af10f7914cd8980c2c02db1e48380052d17eb0504448368&");
         $("#body").click(function() {
-            audio.play();
-            audio.volume = 0.10;
+            if (audio.paused) {
+                audio.play();
+                audio.volume = 0.10;
+            } else {
+                audio.pause();
+            }    
         });
+        var au
         AOS.init();
 
         var textWrapper = document.querySelector('.ml13');
